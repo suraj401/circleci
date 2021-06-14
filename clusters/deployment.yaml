@@ -17,7 +17,7 @@ spec:
         app: circleci-flux
     spec:     
       containers:                    
-        - image: suraj18/circlecci-flux:v1.0.0
+        - image: suraj18/circlecci-flux:v1.0.0 # {"$imagepolicy": "flux-system:circleci-flux"}
           imagePullPolicy: Always # this is required to force pull image     
           name: circleci-flux
           ports:
