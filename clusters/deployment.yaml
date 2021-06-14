@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: circleci-flux  
-  labels: 
+metadata:
+  name: circleci-flux
+  labels:
     name: "circleci-flux"
 spec:
   replicas: 1
@@ -15,13 +15,13 @@ spec:
       name: circleci-flux
       labels:
         app: circleci-flux
-    spec:     
-      containers:                    
-        - image: suraj18/circlecci-flux:v1.0.0 # {"$imagepolicy": "flux-system:circleci-flux"}
-          imagePullPolicy: Always # this is required to force pull image     
-          name: circleci-flux
-          ports:
-            - containerPort: 80
+    spec:
+      containers:
+      - image: suraj18/circlecci-flux:v1.5.0 # {"$imagepolicy": "flux-system:circleci-flux"}
+        imagePullPolicy: Always # this is required to force pull image     
+        name: circleci-flux
+        ports:
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -31,7 +31,6 @@ spec:
   selector:
     app: circleci-flux
   ports:
-    - port: 80
-      targetPort: 80
+  - port: 80
+    targetPort: 80
   type: LoadBalancer
-
