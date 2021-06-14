@@ -34,17 +34,4 @@ spec:
     - port: 80
       targetPort: 80
   type: LoadBalancer
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: circleci-flux
-spec:
-  rules:
-  - host: circle-flux.example.com 
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: circleci-flux
-          servicePort: 80
+
