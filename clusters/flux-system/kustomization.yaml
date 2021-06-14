@@ -5,6 +5,6 @@ resources:
 - gotk-sync.yaml
 - deployment.yaml
 images:
-- name: suraj18/circlecci-flux:v1.2.0 
-  newName: suraj18/circlecci-flux # {"$imagepolicy": "flux-system:circleci-flux"}
+- name: suraj18/circlecci-flux:v1.2.0
+  newName: suraj18/circlecci-flux:v1.3.0 # {"$imagepolicy": "flux-system:circleci-flux"}
   newTag: v1.2.0 # {"$imagepolicy": "flux-system:podinfo:tag"}
